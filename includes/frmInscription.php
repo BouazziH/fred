@@ -13,7 +13,17 @@
 
 <div>
 <label for="email">Email</label>
-<input type="Email" id="email" name="email" value="<?=$email?>">
+<input type="text" id="email" name="email" value="<?=$email?>">
+
+</div>
+<div>
+<label for="password">Password</label>
+<input type="password" id="password" name="password" >
+
+</div>
+<div>
+<label for="passwordVer">Password verify</label>
+<input type="password" id="passwordVer" name="passwordVer">
 
 </div>
 <div>

@@ -12,5 +12,6 @@
         <input type="submit" value="Connexion">
         <input type="reset" value="Effacer">
     </div>
+    
     <input type="hidden" name="frmConnexion">
 </form>
