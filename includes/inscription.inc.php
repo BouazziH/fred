@@ -50,8 +50,27 @@ if (isset($_POST['frmInscription'])) {
         $messageErreur .= "</ul>";
         echo $messageErreur;
         include './includes/frmInscription.php';
-    } else {
-        echo "insert";
+    }
+    else {
+        $password = password_hash($password1, PASSWORD_DEFAULT);
+
+        $requete = "INSERT INTO utilisateurs (id_utilisateur, nom, prenom, mail, password)
+        VALUES (NULL, '$nom', '$prenom', '$mail', '$password');";
+
+        $queryInsert = new Sql();
+        $queryInsert->inserer($requete);
+
+
+        displayMessage("Requête OK");
+        }
+
+        catch(PDOException $e)
+         {
+            die("Erreur : " . $e->getMessage());
+        }
+    }
+
+
        /*  $serverName = "localhost";
         $userNAme = "root";
         $userPassword = "";
@@ -71,11 +90,11 @@ if (isset($_POST['frmInscription'])) {
         } catch (PDOException $e) {
             die("Erreur : " . $e->getMessage());
         } */
-    }
-} else {
+    
+ else {
     //le cas pour tester si on vient pas du formulaire 
 
-    $nom = $prenom = $email = $password =$passwordVer = "";
+    $nom = $prenom = $email = "";
 
     include './includes/frmInscription.php';
 }
