@@ -1,3 +1,6 @@
+<?php
+/*  session_start();  */
+?>
 <h1>Login</h1>
 <?php
     if (isset($_POST['frmLogin'])) {
@@ -29,11 +32,19 @@
         }
 
         else {
-            include './includes/frmLogin.php';
+            //tout ce passe bien 
+             $_SESSION['loginUser'] = $mail;
+             echo $_SESSION['loginUser'];
+         /*    print_r($_SESSION) ;   */
+          
+           /* include './includes/frmLogin.php'; */
+            echo 'tout va bien';
+            header ('location:index.php?page=contact');
         }
     }
     
     else {
+       
         $mail = "";
         include './includes/frmLogin.php';
     }
