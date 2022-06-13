@@ -1,34 +1,25 @@
 <?php
-session_start();
- if (isset($_SESSION['loginUser'])) 
-{
-    echo $_SESSION['loginUser'] ;  
-echo '<header>';
-echo     '<nav>';
-echo  '<ul>';
-echo      ' <li><a href="index.php?page=accueil">Accueil</a></li>';
- echo    '<li><a href="index.php?page=contact">Contact</a></li>';  
- echo '<li><a href="index.php?page=logout">'.$_SESSION['loginUser'] .' logout</a></li>';
-       
-            
- echo    '</ul>';
- echo '</nav>';
-echo '</header>';
-}
-else
-{
-echo '<header>';
-echo     '<nav>';
-echo        '<ul>';
-echo            ' <li><a href="index.php?page=accueil">Accueil</a></li>';
- echo            '<li><a href="index.php?page=contact">Contact</a></li>';
-echo             '<li><a href="index.php?page=inscription">Inscription</a></li>';
- echo            '<li><a href="index.php?page=login">Login</a></li>';
+ session_start();
 
-       
-            
- echo '</ul>';
- echo '</nav>';
-echo '</header>';
-}
 ?>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.php?page=accueil">Accueil</a></li>
+            <li><a href="index.php?page=contact">Contact</a></li>
+            <?php
+            if (isset($_SESSION['loginUser'])) {
+            ?>
+                <span class="login">
+                    <li><strong><?= $_SESSION['loginUser'] ?></strong></li>
+                    <li><a href="index.php?page=logout">Logout</a></li>
+                    
+            </span>
+            <?php } else { ?>
+                <li><a href="index.php?page=inscription">Inscription</a></li>
+                <li><a href="index.php?page=login">Login</a></li>
+            <?php } ?>
+        </ul>
+
+    </nav>
+</header>

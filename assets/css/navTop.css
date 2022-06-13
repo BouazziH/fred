@@ -16,3 +16,9 @@ header nav ul li a {
     display: block;
     padding: 5px 10px;
 }
+/* le span qui contien les li logout et la seesion faut les
+mettre a droite */
+.login
+{
+    float: right;
+}
