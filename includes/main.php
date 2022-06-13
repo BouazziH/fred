@@ -3,6 +3,6 @@
 ?>
 <main>
 <?php
-    inclusionIncFile('contact');
+    inclusionIncFile('accueil');
 ?>
 </main>
