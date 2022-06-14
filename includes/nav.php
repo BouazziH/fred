@@ -12,7 +12,7 @@
             if (isset($_SESSION['loginUser'])) {
             ?>
                 <span class="login">
-                <li><i class="fa-solid fa-user fa-xl"></i></li>
+                <li><a href="index.php?page=users"><i class="fa-solid fa-user fa-xl"></i></a></li>
                     <li><strong><?= $_SESSION['loginUser'] ?></strong></li>
                     <li><a href="index.php?page=logout">Logout</a></li>
                     
