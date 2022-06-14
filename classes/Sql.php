@@ -25,6 +25,11 @@ class Sql
         $this->connexion->exec($query);
     }
 
+    public function afficher($query)
+    {
+       return $this->connexion->query($query)->fetchAll();
+    }
+
   /*   public function __destruct()
     {
         $this->connexion = null;
