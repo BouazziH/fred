@@ -1,39 +1,43 @@
 <h1>Users</h1>
- <?php
- /* $requete = "SELECT id_user, nom, prenom, email FROM `utilisateur`;";
+<?php
+$requete = "SELECT id_user, nom, prenom, email FROM `utilisateur`;";
 
-  $queryselect = new Sql();
-  $queryselect->afficher($requete);
-
-
-  
-  echo '<pre>';
+$queryselect = new Sql();
+$requete = $queryselect->afficher($requete);
+//pour afficher le resultat du select
+/* echo '<pre>';
 print_r($requete);
-echo '</pre>'; */ 
+echo '</pre>'; */
 
 
- $servname = "localhost"; $dbname = "filrouge"; $user = "root"; $pass = "";
+echo '<hr>';
 
-try{
-    $dbco = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
-    $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-   /* Sélectionne les valeurs dans les colonnes prenom et mail de la table
-     users pour chaque entrée de la table*/
-    $sth = $dbco->prepare("SELECT id_user, nom, prenom, email FROM `utilisateur`");
-    $sth->execute();
-    
-  
-   $resultat = $sth->fetchAll(PDO::FETCH_ASSOC);
-    
-   
-    echo '<pre>';
-    print_r($resultat);
-    echo '</pre>';
+
+echo '<table border="1">';
+echo '<tr>';
+echo '<td>id_user</td>';
+echo '<td>nom</td>';
+
+echo '<td>prenom</td>';
+echo '<td>email</td>';
+echo '<td>Update</td>';
+echo '<td>Delete</td>';
+echo '</tr>';
+
+foreach ($requete as $key => $value) {
+
+
+    echo '<tr>';
+    echo '<td>' . $value['id_user'] . '</td>';
+    echo '<td>' . $value['nom'] . '</td>';
+    echo '<td>' . $value['prenom'] . '</td>';
+    echo '<td>' . $value['email'] . '</td>';
+    echo '<td> <a href="index.php?page=userUpdate">UPDATE </a></td>';
+    echo '<td> <input type="submit" name="submit" value="Uploader" /></td>';
+    echo '</tr>';
 }
-      
-catch(PDOException $e){
-    echo "Erreur : " . $e->getMessage();
-}
+
+echo '</table>';
+
 
 ?>
