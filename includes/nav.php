@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <?php
  session_start();
 
@@ -11,6 +12,7 @@
             if (isset($_SESSION['loginUser'])) {
             ?>
                 <span class="login">
+                <li><i class="fa-solid fa-user fa-xl"></i></li>
                     <li><strong><?= $_SESSION['loginUser'] ?></strong></li>
                     <li><a href="index.php?page=logout">Logout</a></li>
                     
