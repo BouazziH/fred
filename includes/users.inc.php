@@ -32,7 +32,7 @@ foreach ($requete as $key => $value) {
     echo '<td>' . $value['nom'] . '</td>';
     echo '<td>' . $value['prenom'] . '</td>';
     echo '<td>' . $value['email'] . '</td>';
-    echo '<td> <a href="index.php?page=userUpdate">UPDATE </a></td>';
+    echo '<td> <button><a href="index.php?page=userUpdate&id=' . $value['id_user'] . '">Modifier</a></button></td>';
     echo '<td> <input type="submit" name="submit" value="Uploader" /></td>';
     echo '</tr>';
 }
