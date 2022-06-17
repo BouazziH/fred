@@ -38,7 +38,18 @@
          /*    print_r($_SESSION) ;   */
           
            /* include './includes/frmLogin.php'; */
-            echo 'tout va bien';
+/* $toEmail = $mail;
+$fromEmail = 'contact@ceppic-php-file-rouge.fr';
+$sujetEmail = 'Login Success';
+$messageEmail = 'vous etes bien connecté!';
+ mail($toEmail, $sujetEmail,$messageEmail);  */
+ $messageEmail = $mail . 'vous etes connectéé!';
+ sendEmail($mail,$_SESSION['loginUser'],'Login Success',$messageEmail);
+ 
+
+
+
+         /*    echo 'tout va bien'; */
             header ('location:index.php?page=contact');
         }
     }
