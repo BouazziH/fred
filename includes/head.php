@@ -6,5 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CEPPIC fil rouge</title>
     <link rel="stylesheet" media="screen" href="./assets/css/style.css" />
+    <script src="../assets/js/timer.js" defer></script>
 </head>
 <body>
