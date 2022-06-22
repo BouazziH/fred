@@ -29,8 +29,8 @@ class Sql
     {
        return $this->connexion->query($query)->fetchAll();
     }
-
-  /*   public function __destruct()
+/* 
+    public function __destruct()
     {
         $this->connexion = null;
     } */
