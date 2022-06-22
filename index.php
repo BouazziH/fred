@@ -1,9 +1,10 @@
 <?php
 //pour demarer une session
-/* session_start(); */
-
+session_start(); 
+//ajout de la fonction autoload de vendor
 require './vendor/autoload.php';
-
+//pour tester  la fonction dump de symfony
+dump($_SESSION);
 spl_autoload_register(function($className) {
     require './classes/' . $className . '.php';
 });
